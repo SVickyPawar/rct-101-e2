@@ -38,10 +38,10 @@ const Products = () => {
     <Flex>
       {/*  AddProduct */}
       <AddProduct/>
-      <Grid>{/* List of Products */}
-      {list.map((e)=>{
-        <Product key={e.id} src={e.imageSrc} title={e.title} category={e.category} gender={e.gender} price={e.price}/>
-      })}
+      <Grid templateColumns='repeat(5, 1fr)' gap={6} marginTop={150}>{/* List of Products */}
+      {list.map((e)=>(
+        <Product key={e.id} {...e}/>
+      ))}
       </Grid>
       {/* Pagination */}
       <Pagination/>
